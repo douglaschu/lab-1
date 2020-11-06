@@ -1,15 +1,23 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- This tells the browser to expect an html document. All html documents start out this way. -->
 <html>
     <head>
+    <!-- important imports go here -->
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <!-- links to CSS stylesheet -->
         <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=OpenSans">
+        <!-- imports Open Sans font from google via direct URL -->
     </head>
     <body>
-        <nav class="nav">
+        <!-- the good content -->
+        <!-- I organized the body into two sections: "nav" and "content". The "nav" element is newer to html. It acts like a div. It's easier for me to read than labelling a div as "nav", which you used to have to do. -->
+        <nav class="nav"> 
+        <!-- Creating the navigation bar -->
             <ul>
                 <li id="nav-title">Chirpus Inc.</li>
+                <!-- I use an ID selector because there's only one main title on the page. -->
                 <li><a class="link" href="#">Work</a></li>
+                <!-- Creates a clickable link. For the purposes of the lab, the link doesn't go anywhere, it just exists. -->
                 <li><a class="link" href="#">About Us</a></li>
                 <li><a class="link" href="#">Contact</a></li>
                 <button>Hire Us</button>
@@ -21,18 +29,11 @@
             <div class="text">
                 <p>
                     Since maybe like the Middle Ages, there have been many differing opinions on hustle and bustle. This cannot be denied. It is my intention to sit down and play video games for several hours. First, moving around quickly, and with purpose, is a
-                    true sign of character. Secondarily, bustle (e.g. hustle yields more product for the working types. "Hustle and bustle are like my right and left arms," said Lil' Spicy in his famous "Hustle and Bustle Are Like My Right and Left Arms" speech.
+                    true sign of character. Secondarily, bustle (e.g. hustle yields more product for the working types. "Hustle and bustle are like my right and left arms," said Li'l Spicy in his famous "Hustle and Bustle Are Like My Right and Left Arms" speech.
                 </p>    
+                <!-- I was allowed to put in any text I wanted (within reason), so I copy pasted some text from a Strong Bad email, where Strong Bad makes fun of a submitter's textbook. -->
             </div>
-            <div class="scroll">
             <button>Scroll Down</button>
-            </div>
-        </div>
-
-        <div class = "circles">
-            <div class = "purple"></div>
-            <div class = "orange"></div>
-            <div class = "pink"></div>
         </div>
     </body>
 </html>

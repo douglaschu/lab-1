@@ -1,155 +1,98 @@
+/* The body class is kind of like a global class. I put in here what every part of the page has in common. */
 body {
     font-size: 16px;
     font-family: 'Open Sans', 'Arial', sans-serif;
-    background-color: #f9fafc;
+    /* If Open Sans doesn't work on the user's computer, Arial and the system's default generic sans serif font are the #2 and #3 options. */
+    background-color: #f9fafc; 
+    /* A nice, tasteful off-white. */
 }
 
 nav {
     display: flex;
-    padding: 0 0.5em 0 0.5em;
+    /* Setting display to flex activates flexbox formatting, which gives us more options than the default inline block formatting. The flexbox setting goes on the parent element of what you want to style with flexbox, not the items themselves.  */
 }
 
-.nav ul {
+/* this selects the body of the unnumbered list, so the styling is minimal. */
+.nav ul { 
     margin: 0;
     padding: 0;
     width: 100%;
+    /* I would like the nav bar to fit 100% of the page, yes. */
 }
 
-.nav li {
-    list-style-type: none;
-    margin: 0.6em 0;
-    color: #69696a;
+.nav li { /* this selects all the unnumbered list elements in the nav class, so the styling goes into detail. */
+    list-style-type: none; /* none of those ugly bullet points. */
+    margin: 0.6em 0; /* Trial and error used to get the spacing between list items matching the build requirements. */
+        /* em and rem set the font size to be relative to the default font size, instead of an absolute font size in pixels. I like to scale sizes keyed off a page element, just in case. */
+        /* I only wanted to adjust the top and bottom margins for the list items, so I set the margin with two inputs. */
+    color: #69696a; /* we are going monochrome on this one */
 }
 
+/* This styles all the page's links. */
 .link {
-    text-decoration: none;
+    text-decoration: none; /* No, I don't want the default bright blue Times New Roman underline format for my links. */
     color: #69696a;
 }
 
+/* This will turn visited links a different color. */
 a:visited {
     color: #69696a;
 }
 
+/* This styles the title of the page. I used an id selector instead of a class selector because there's only one title on the page. */
 #nav-title {
     color: #000000;
     text-transform: lowercase;
-    
+    /* This will transform the title "Grant Chirpus" from the html into lowercase, for aesthetic purposes. I think it serves better to strictly use CSS for styling and to make sure the HTML data is accurate. */
 }
 
+/* Styling the button */
 button {
     display: flex;
     border: none;
-    border-radius: 30px;
+    border-radius: 30px; /* This creates beveled edges on the button. */
     background-color: #000000;
     color: #ffffff;
     padding: 0.5em;
     margin: 0.6em 0 0 0;
+        /* setting the margin this way, with four inputs (it goes top, right, bottom, left), allows for more precise styling. In this instance, I only wanted to adjust the top spacing of the margin. */
     width: 100%;
-    justify-content: center;
+    justify-content: center; 
+        /* I want the button's text to be in the middle of the button. */
     box-sizing: border-box;
     font-size: 16px;
     font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
-.content {
-    padding: 0 0.5em 0 0.5em;
-}
-
 h1 {
     font-size: 1.75rem;
-    font-weight: 600;
+    font-weight: 600; 
+        /* Font weight determines the thickness of the lettering. */
     text-transform: lowercase;
 }
 
 .text {
+    /* This creates the solid black line on the left  */
     border-left: solid #000000;
     border-color: #69696a;
-    padding: 0 1.5em 0 1.5em;;
+    padding: 0 0 0 20px;
+
     color: #69696a;
 }
 
+/* The media query section makes the page responsive. I designed this page to be mobile-first as is best practice, so the media query setting is for desktop setting.  */
 @media (min-width: 768px) {
 
     nav {
         display: flex;                            
-        justify-content: space-between;
-        padding: 0 0.5em 0 0.5em;
-    }
+        justify-content: space-between; 
+        /* The space-between setting will orient the nav list items so that they stick to the edges and the center and are equidistant from each other. Space-Around, on the other hand, will make them equidistant without touching the edges or the center, making it look like they're floating. Not what we want. */
+    } 
+    
 
     .nav ul {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        
+        flex-direction: row; 
+        /* This reorients the nav's elements from vertical to horizontal. */
     }
-
-    .nav li {
-        display: flex;
-        margin: 0.6em 1em 0 0;
-    }
-
-    .nav li:nth-of-type(1) {
-        flex-grow: 2;
-        
-    }
-
-    button {
-        width: auto;
-        margin: 0 1em 0 0;
-        padding: 0.6em 1em 0.6em 1em;
-        
-    }
-
-    .content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;    
-    }
-
-    .text {
-        width: 50%;
-    }
-
-    .scroll {
-        position: fixed;
-        bottom: 0.5em;
-        left: 50%
-         
-    }
-
-    .purple {
-        position: absolute;
-        margin: auto;
-        background-color: rgba(207, 130, 213, 0.6);
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        top: 8em;
-        right: 1.5em; 
-        z-index: 2;   
-    }
-    
-    .orange {
-        position: absolute;
-        margin: auto;
-        background-color: rgba(247, 193, 162, 0.7);
-        width: 125px;
-        height: 125px;
-        border-radius: 50%;
-        top: 12.5em;
-        right: 1.5em;
-        z-index: 3;
-    }
-    
-    .pink {
-        position: absolute;
-        margin: auto;
-        background-color: rgba(247, 136, 167, 0.6);
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        top: 7em;
-        right: 5em;
-        z-index: 1;
-    }
-} 
+}
